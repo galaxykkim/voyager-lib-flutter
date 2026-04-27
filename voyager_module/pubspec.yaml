@@ -1,6 +1,6 @@
 name: voyager
-description: "A new Flutter package project."
-version: 0.0.1
+description: "Fluter 프로젝트를 위한 FCM 연동 패키지"
+version: 0.9.0
 homepage:
 
 environment:
