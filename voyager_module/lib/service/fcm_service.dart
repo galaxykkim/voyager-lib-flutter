@@ -73,5 +73,9 @@ class FcmService {
     await _fm.unsubscribeFromTopic(topic);
   }
 
+  // FCM 토큰 삭제.
+  Future<void> deleteToken() async {
+    await _fm.deleteToken();
+  }
 
 }

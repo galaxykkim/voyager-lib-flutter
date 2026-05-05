@@ -4,6 +4,7 @@ import 'package:dio/src/response.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:voyager/service/fcm_service.dart';
 import 'package:voyager/service/voyager_service.dart';
+import 'package:voyager/usecase/delete_fcm_token_usecase.dart';
 import 'package:voyager/usecase/get_apns_token_usecase.dart';
 import 'package:voyager/usecase/get_fcm_token_usecase.dart';
 import 'package:voyager/usecase/get_initial_message_usecase.dart';
@@ -77,6 +78,11 @@ class VoyagerMessaging {
       provisional,
       sound,
     );
+  }
+
+  /// FCM 토큰 삭제. 삭제 후 FCM은 이 기기로 메시지를 전달하지 못함.
+  Future<void> deleteFcmToken() async {
+    await DeleteFcmTokenUseCase(_fcmService).call();
   }
 
   /// FCM 토픽 구독 설정.
